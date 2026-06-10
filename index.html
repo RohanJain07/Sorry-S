@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Saloni ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffd6e7,#ffe9f2);
+overflow-x:hidden;
+color:#ff4f81;
+}
+
+.page{
+display:none;
+min-height:100vh;
+padding:20px;
+text-align:center;
+}
+
+.active{
+display:block;
+}
+
+h1{
+font-family:'Pacifico',cursive;
+font-size:40px;
+margin-bottom:20px;
+}
+
+.password-box{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:25px;
+width:90%;
+max-width:350px;
+box-shadow:0 10px 30px rgba(255,105,180,.3);
+}
+
+input{
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+background:#ffe6f0;
+margin-top:15px;
+}
+
+button{
+background:#ff77aa;
+color:white;
+border:none;
+padding:15px 30px;
+border-radius:30px;
+margin-top:15px;
+font-size:16px;
+cursor:pointer;
+}
+
+.hero-img{
+width:250px;
+border-radius:25px;
+margin-top:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.message{
+background:white;
+padding:20px;
+margin-top:20px;
+border-radius:25px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+line-height:1.8;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:20px;
+}
+
+.gif{
+width:220px;
+margin-top:20px;
+}
+
+.heart{
+position:fixed;
+color:pink;
+font-size:25px;
+animation:float 8s linear infinite;
+pointer-events:none;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+100%{
+transform:translateY(-100px);
+opacity:1;
+}
+}
+
+.timeline{
+background:white;
+padding:20px;
+margin-top:20px;
+border-radius:25px;
+}
+
+.timeline p{
+margin:15px 0;
+}
+
+.music-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:999;
+}
+
+</style>
+</head>
+<body>
+
+<!-- PASSWORD PAGE -->
+
+<div class="page active" id="login">
+
+<div class="password-box">
+
+<div class="card">
+
+<h1>Hi Saloni ❤️</h1>
+
+<p>Enter Secret Password</p>
+
+<p>Hint:a special date for us with 1025</p>
+
+<input type="password" id="password">
+
+<button onclick="checkPassword()">
+Enter 💖
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MAIN PAGE -->
+
+<div class="page" id="main">
+
+<h1>For My Beautiful Saloni ❤️</h1>
+
+<img src="cute.gif" class="gif">
+
+<div class="message">
+
+<h2>I'm Sorry 🥺</h2>
+
+<br>
+
+<p>
+Bachaa ❤️,
+Me khup pream karto tuzya var ani me te prove karnar. Please maaf kar.
+I know mazya chuki mula tuzya manat asnari mazi image me kharab karun ghetli pan me tasa
+tasa nahiye me swatala khup improve karilo me nahi double double tech mistake karnar
+me tula pan samju shakto pan me kiti pream karto tazi limit nahiye.. 
+ek na please yee vapas life madhe🥺
+Please Trust me ❤️
+I Love You forever❤️
+</p>
+
+</div>
+
+<div class="timeline">
+
+<h2>what i want to tell 🌸</h2>
+
+<img src="saloni3.jpg" class="hero-img">
+
+</div>
+
+<h2 style="margin-top:30px">
+My Favourite Photos 📸
+</h2>
+
+<div class="gallery">
+
+<img src="saloni1.jpg">
+<img src="saloni2.jpg">
+<img src="saloni5.jpg">
+<img src="saloni4.jpg">
+
+</div>
+
+<div class="message">
+
+<h2>Can You Forgive Me? 🥺❤️</h2>
+
+<br>
+
+<button onclick="alert('Thank You Bachaa, I Love You❤️')">
+Yes ❤️
+</button>
+
+</div>
+
+</div>
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">
+🎵
+</button>
+
+<script>
+
+function checkPassword(){
+
+let pass=document.getElementById("password").value;
+
+if(pass==="141025"){
+
+document.getElementById("login").classList.remove("active");
+document.getElementById("main").classList.add("active");
+
+}else{
+
+alert("Wrong Password 🥺");
+
+}
+
+}
+
+function toggleMusic(){
+
+let music=document.getElementById("music");
+
+if(music.paused){
+
+music.play();
+
+}else{
+
+music.pause();
+
+}
+
+}
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+},500);
+
+</script>
+
+</body>
+</html>
